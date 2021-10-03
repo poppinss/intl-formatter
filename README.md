@@ -27,6 +27,7 @@ The `intl-formatter` package ships with the memoized version of the `Intl` API. 
 ```
 DateTimeFormat@memoize x 1,031,069 ops/sec ±0.22% (96 runs sampled)
 DateTimeFormat x 16,338 ops/sec ±16.30% (82 runs sampled)
+
 Fastest is DateTimeFormat@memoize
 ```
 
@@ -35,6 +36,7 @@ Fastest is DateTimeFormat@memoize
 ```
 NumberFormat@memoize x 2,740,775 ops/sec ±0.29% (94 runs sampled)
 NumberFormat x 67,829 ops/sec ±1.75% (95 runs sampled)
+
 Fastest is NumberFormat@memoize
 ```
 
@@ -43,6 +45,7 @@ Fastest is NumberFormat@memoize
 ```
 PluralRules@memoize x 2,240,552 ops/sec ±0.22% (91 runs sampled)
 PluralRules x 55,671 ops/sec ±5.13% (92 runs sampled)
+
 Fastest is PluralRules@memoize
 ```
 
@@ -51,6 +54,7 @@ Fastest is PluralRules@memoize
 ```
 RelativeTimeFormat@memoize x 2,344,764 ops/sec ±0.24% (96 runs sampled)
 RelativeTimeFormat x 79,338 ops/sec ±4.08% (83 runs sampled)
+
 Fastest is RelativeTimeFormat@memoize
 ```
 
