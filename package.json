@@ -1,0 +1,61 @@
+{
+  "name": "@poppinss/intl-formatter",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node japaFile.js",
+    "clean": "del build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "commit": "git-cz",
+    "release": "np",
+    "version": "npm run build",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json poppinss/intl-formatter"
+  },
+  "keywords": [
+    "intl",
+    "formatjs"
+  ],
+  "author": "virk,poppinss",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^4.1.2",
+    "@adonisjs/require-ts": "^2.0.8",
+    "@types/node": "^16.10.2",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^4.0.1",
+    "doctoc": "^2.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-adonis": "^1.3.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "github-label-sync": "^2.0.2",
+    "husky": "^7.0.2",
+    "japa": "^3.1.1",
+    "mrm": "^3.0.9",
+    "np": "^7.5.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  },
+  "files": [
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  }
+}
