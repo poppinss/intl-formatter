@@ -88,8 +88,8 @@ FormatJS is a great and a popular library for Internationalization. However, it 
 
 Whereas, this package relies on the native Intl APIs available in Node runtime and caches the instances for re-use and performance.
 
-[github-actions-image]: https://github.com/intl-formatter/actions/workflows/test.yml
-[github-actions-url]: https://img.shields.io/github/workflow/status/intl-formatter/test?style=for-the-badge "github-actions"
+[github-actions-image]: https://img.shields.io/github/workflow/status/poppinss/intl-formatter/test?style=for-the-badge
+[github-actions-url]: https://github.com/poppinss/intl-formatter/actions/workflows/test.yml "github-actions"
 
 [npm-image]: https://img.shields.io/npm/v/@poppinss/intl-formatter.svg?style=for-the-badge&logo=npm
 [npm-url]: https://npmjs.org/package/@poppinss/intl-formatter "npm"
