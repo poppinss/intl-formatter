@@ -1,6 +1,6 @@
 {
   "name": "@poppinss/intl-formatter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Memoized API for Intl (To be used within Node)",
   "main": "build/index.js",
   "files": [
