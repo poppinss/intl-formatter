@@ -6,7 +6,7 @@
   - [Benchmarks](#benchmarks)
   - [Usage](#usage)
   - [Available formatters](#available-formatters)
-  - [Why not using FormatJS?](#why-not-using-formatjs)
+  - [Why not use FormatJS?](#why-not-use-formatjs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -87,7 +87,7 @@ console.log(amount)
 - `formatters.relative` same as [Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat)
 - `formatters.plural` same as [Intl.PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules)
 
-## Why not using FormatJS?
+## Why not use FormatJS?
 FormatJS is a great and a popular library for Internationalization. However, it comes with large polyfills for platforms (especially certain browser) that does not have complete support for Intl. 
 
 Whereas, this package relies on the native Intl APIs available in Node runtime and caches the instances for re-use and performance.
