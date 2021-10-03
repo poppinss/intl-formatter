@@ -1,10 +1,12 @@
 {
   "name": "@poppinss/intl-formatter",
   "version": "0.0.0",
-  "description": "",
+  "description": "Memoized API for Intl (To be used within Node)",
   "main": "index.js",
   "scripts": {
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "prebenchmark": "npm run build",
+    "benchmark": "node build/benchmarks/date.js && node build/benchmarks/number.js && node build/benchmarks/plural.js && node build/benchmarks/relative.js",
     "pretest": "npm run lint",
     "test": "node japaFile.js",
     "clean": "del build",
@@ -28,6 +30,7 @@
     "@adonisjs/mrm-preset": "^4.1.2",
     "@adonisjs/require-ts": "^2.0.8",
     "@types/node": "^16.10.2",
+    "benchmark": "^2.1.4",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "del-cli": "^4.0.1",
@@ -57,5 +60,8 @@
   "np": {
     "contents": ".",
     "anyBranch": false
+  },
+  "dependencies": {
+    "moize": "^6.1.0"
   }
 }

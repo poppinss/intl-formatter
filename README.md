@@ -3,21 +3,90 @@
 ## Table of contents
 
 - [@poppinss/intl-formatter](#poppinssintl-formatter)
-  - [Installation](#installation)
+  - [Benchmarks](#benchmarks)
   - [Usage](#usage)
+  - [Available formatters](#available-formatters)
+  - [Why not using FormatJS?](#why-not-using-formatjs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # @poppinss/intl-formatter
-> Tagline
+> Memoized API for Intl (To be used within Node)
 
 [![github-actions-image]][github-actions-url] [![npm-image]][npm-url] [![license-image]][license-url] [![typescript-image]][typescript-url]
 
-A short brief
+The `intl-formatter` package ships with the memoized version of the `Intl` API. Creating new instances of the `new Intl.<AnyFormatter>` is painfully slow ([see benchmarks](#benchmarks)) and this package just caches those instances for re-use.
 
-## Installation
+- The API is 100% indentical to the official spec. Instead of writing `new Intl.DateTimeFormat()`, you write `formatters.date()` and rest is all the same.
+- All arguments are deeply compared during memoization.
+
+## Benchmarks
+
+**DateTimeFormat**
+
+```
+DateTimeFormat@memoize x 1,031,069 ops/sec ±0.22% (96 runs sampled)
+DateTimeFormat x 16,338 ops/sec ±16.30% (82 runs sampled)
+Fastest is DateTimeFormat@memoize
+```
+
+**NumberFormat**
+
+```
+NumberFormat@memoize x 2,740,775 ops/sec ±0.29% (94 runs sampled)
+NumberFormat x 67,829 ops/sec ±1.75% (95 runs sampled)
+Fastest is NumberFormat@memoize
+```
+
+**PluralRules**
+
+```
+PluralRules@memoize x 2,240,552 ops/sec ±0.22% (91 runs sampled)
+PluralRules x 55,671 ops/sec ±5.13% (92 runs sampled)
+Fastest is PluralRules@memoize
+```
+
+**RelativeTimeFormat**
+
+```
+RelativeTimeFormat@memoize x 2,344,764 ops/sec ±0.24% (96 runs sampled)
+RelativeTimeFormat x 79,338 ops/sec ±4.08% (83 runs sampled)
+Fastest is RelativeTimeFormat@memoize
+```
 
 ## Usage
+Install the package from npm registry as follows:
+
+```sh
+npm i @poppinss/intl-formatter
+
+# Yarn friends
+yarn add @poppinss/intl-formatter
+```
+
+And use it as follows:
+
+```ts
+import { formatters } from '@poppinss/intl-formatter'
+
+const amount = formatters
+  .number('en-in', { style: 'currency', currency: 'INR' })
+  .format(10)
+
+console.log(amount)
+```
+
+## Available formatters
+
+- `formatters.number` same as [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat)
+- `formatters.date` same as [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)
+- `formatters.relative` same as [Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat)
+- `formatters.plural` same as [Intl.PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules)
+
+## Why not using FormatJS?
+FormatJS is a great and a popular library for Internationalization. However, it comes with large polyfills for platforms (especially certain browser) that does not have complete support for Intl. 
+
+Whereas, this package relies on the native Intl APIs available in Node runtime and caches the instances for re-use and performance.
 
 [github-actions-image]: https://github.com/intl-formatter/actions/workflows/test.yml
 [github-actions-url]: https://img.shields.io/github/workflow/status/intl-formatter/test?style=for-the-badge "github-actions"
