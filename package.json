@@ -13,7 +13,7 @@
     "prebenchmark": "npm run build",
     "benchmark": "node build/benchmarks/date.js && node build/benchmarks/number.js && node build/benchmarks/plural.js && node build/benchmarks/relative.js",
     "pretest": "npm run lint",
-    "test": "node japaFile.js",
+    "test": "node .bin/test.js",
     "clean": "del build",
     "compile": "npm run lint && npm run clean && tsc",
     "build": "npm run compile",
@@ -21,7 +21,7 @@
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
     "commit": "git-cz",
-    "release": "np",
+    "release": "np --message=\"chore(release): %s\"",
     "version": "npm run build",
     "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json poppinss/intl-formatter"
   },
@@ -79,5 +79,48 @@
   "bugs": {
     "url": "https://github.com/poppinss/intl-formatter/issues"
   },
-  "homepage": "https://github.com/poppinss/intl-formatter#readme"
+  "homepage": "https://github.com/poppinss/intl-formatter#readme",
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "16.13.1",
+    "probotApps": [
+      "stale",
+      "lock"
+    ],
+    "runGhActionsOnWindows": true
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  }
 }
