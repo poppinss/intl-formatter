@@ -82,6 +82,24 @@ RelativeTimeFormat x 89,485 ops/sec ±3.48% (84 runs sampled)
 Fastest is RelativeTimeFormat@memoize
 ```
 
+**ListFormat**
+
+```
+ListFormat@memoize x 1,501,976 ops/sec ±1.94% (97 runs sampled)
+ListFormat x 244,943 ops/sec ±0.93% (97 runs sampled)
+
+Fastest is ListFormat@memoize
+```
+
+**DisplayNames**
+
+```
+DisplayNames@memoize x 299,573 ops/sec ±0.56% (93 runs sampled)
+DisplayNames x 106,279 ops/sec ±1.32% (94 runs sampled)
+
+Fastest is DisplayNames@memoize
+```
+
 [github-actions-image]: https://img.shields.io/github/workflow/status/poppinss/intl-formatter/test?style=for-the-badge
 [github-actions-url]: https://github.com/poppinss/intl-formatter/actions/workflows/test.yml "github-actions"
 
