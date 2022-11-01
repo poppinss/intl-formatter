@@ -38,3 +38,10 @@ export const relative = moize.default(
   },
   { isDeepEqual: true }
 )
+
+export const list = moize.default(
+  (...args: ConstructorParameters<typeof Intl['ListFormat']>) => {
+    return new Intl.ListFormat(...args)
+  },
+  { isDeepEqual: true }
+)

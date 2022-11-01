@@ -100,4 +100,23 @@ test.group('formatters', () => {
       '24 min ago'
     )
   })
+
+  test('format a list', ({ assert }) => {
+    assert.equal(
+      formatters
+        .list('en-in', { style: 'short', type: 'disjunction' })
+        .format(['Motorcycle', 'Bus', 'Car']),
+      'Motorcycle, Bus or Car'
+    )
+
+    /**
+     * Ensure memoize works fine when the options are changed
+     */
+    assert.equal(
+      formatters
+        .list('en-in', { style: 'long', type: 'conjunction' })
+        .format(['Motorcycle', 'Bus', 'Car']),
+      'Motorcycle, Bus and Car'
+    )
+  })
 })
