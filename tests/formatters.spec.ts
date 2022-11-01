@@ -1,17 +1,17 @@
 /*
- * @poppinss/utils
+ * @poppinss/intl-formatter
  *
- * (c) Harminder Virk <virk@adonisjs.com>
+ * (c) Poppinss
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-import test from 'japa'
-import { formatters } from '../index'
+import { test } from '@japa/runner'
+import formatters from '../index.js'
 
 test.group('formatters', () => {
-  test('format a number', (assert) => {
+  test('format a number', ({ assert }) => {
     assert.equal(
       formatters.number('en-in', { style: 'currency', currency: 'INR' }).format(10),
       '₹10.00'
@@ -26,7 +26,7 @@ test.group('formatters', () => {
     )
   })
 
-  test('format a date', (assert) => {
+  test('format a date', ({ assert }) => {
     const date = new Date()
 
     assert.equal(
@@ -55,7 +55,7 @@ test.group('formatters', () => {
     )
   })
 
-  test('select plural rules', (assert) => {
+  test('select plural rules', ({ assert }) => {
     assert.equal(
       formatters
         .plural('en-in', {
@@ -78,7 +78,7 @@ test.group('formatters', () => {
     )
   })
 
-  test('format relative time', (assert) => {
+  test('format relative time', ({ assert }) => {
     assert.equal(
       formatters
         .relative('en-in', {

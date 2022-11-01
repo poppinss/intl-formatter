@@ -1,27 +1,15 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Table of contents
-
-- [@poppinss/intl-formatter](#poppinssintl-formatter)
-  - [Usage](#usage)
-  - [Available formatters](#available-formatters)
-  - [Why not use FormatJS?](#why-not-use-formatjs)
-  - [Benchmarks](#benchmarks)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # @poppinss/intl-formatter
-> Memoized API for Intl (To be used within Node)
+> Memoized API for Intl (To be used within Node.js)
 
-[![github-actions-image]][github-actions-url] [![npm-image]][npm-url] [![license-image]][license-url] [![typescript-image]][typescript-url]
+[![gh-workflow-image]][gh-workflow-url] [![typescript-image]][typescript-url] [![npm-image]][npm-url] [![license-image]][license-url] [![synk-image]][synk-url]
 
-The `intl-formatter` package ships with the memoized version of the `Intl` API. Creating new instances of the `new Intl.<AnyFormatter>` is painfully slow ([see benchmarks](#benchmarks)) and this package just caches those instances for re-use.
+The `intl-formatter` package ships with the memoized version of the `Intl` API. Creating new instances of the `new Intl.<AnyFormatter>` is painfully slow ([see benchmarks](#benchmarks)), and this package caches those instances for re-use.
 
-- The API is 100% indentical to the official spec. Instead of writing `new Intl.DateTimeFormat()`, you write `formatters.date()` and rest is all the same.
+- The API is 100% identical to the official spec, instead of writing `new Intl.DateTimeFormat()`, you write `formatters.date()`, and the rest is all the same.
 - All arguments are deeply compared during memoization.
 
 ## Usage
-Install the package from npm registry as follows:
+Install the package from the npm registry as follows:
 
 ```sh
 npm i @poppinss/intl-formatter
@@ -50,17 +38,17 @@ console.log(amount)
 - `formatters.plural` same as [Intl.PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules)
 
 ## Why not use FormatJS?
-FormatJS is a great and a popular library for Internationalization. However, it comes with large polyfills for platforms (especially certain browser) that does not have complete support for Intl. 
+FormatJS is a great and popular library for Internationalization. However, it has a large set of polyfills for different platforms (especially for browsers) that do not have complete support for Intl. 
 
-Whereas, this package relies on the native Intl APIs available in Node runtime and caches the instances for re-use and performance.
+This package relies on the native Intl APIs available in Node.js runtime and caches the instances for re-use and performance.
 
 ## Benchmarks
 
 **DateTimeFormat**
 
 ```
-DateTimeFormat@memoize x 1,031,069 ops/sec ±0.22% (96 runs sampled)
-DateTimeFormat x 16,338 ops/sec ±16.30% (82 runs sampled)
+DateTimeFormat@memoize x 1,115,507 ops/sec ±0.22% (94 runs sampled)
+DateTimeFormat x 20,042 ops/sec ±20.76% (75 runs sampled)
 
 Fastest is DateTimeFormat@memoize
 ```
@@ -68,8 +56,8 @@ Fastest is DateTimeFormat@memoize
 **NumberFormat**
 
 ```
-NumberFormat@memoize x 2,740,775 ops/sec ±0.29% (94 runs sampled)
-NumberFormat x 67,829 ops/sec ±1.75% (95 runs sampled)
+NumberFormat@memoize x 2,874,842 ops/sec ±0.28% (97 runs sampled)
+NumberFormat x 74,720 ops/sec ±1.14% (97 runs sampled)
 
 Fastest is NumberFormat@memoize
 ```
@@ -77,8 +65,8 @@ Fastest is NumberFormat@memoize
 **PluralRules**
 
 ```
-PluralRules@memoize x 2,240,552 ops/sec ±0.22% (91 runs sampled)
-PluralRules x 55,671 ops/sec ±5.13% (92 runs sampled)
+PluralRules@memoize x 2,381,739 ops/sec ±0.63% (97 runs sampled)
+PluralRules x 62,113 ops/sec ±2.88% (91 runs sampled)
 
 Fastest is PluralRules@memoize
 ```
@@ -86,8 +74,8 @@ Fastest is PluralRules@memoize
 **RelativeTimeFormat**
 
 ```
-RelativeTimeFormat@memoize x 2,344,764 ops/sec ±0.24% (96 runs sampled)
-RelativeTimeFormat x 79,338 ops/sec ±4.08% (83 runs sampled)
+RelativeTimeFormat@memoize x 2,426,178 ops/sec ±1.11% (92 runs sampled)
+RelativeTimeFormat x 89,485 ops/sec ±3.48% (84 runs sampled)
 
 Fastest is RelativeTimeFormat@memoize
 ```
@@ -103,3 +91,6 @@ Fastest is RelativeTimeFormat@memoize
 
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
 [typescript-url]:  "typescript"
+
+[synk-image]: https://img.shields.io/snyk/vulnerabilities/github/poppinss/intl-formatter?label=Synk%20Vulnerabilities&style=for-the-badge
+[synk-url]: https://snyk.io/test/github/poppinss/intl-formatter?targetFile=package.json 'synk'
