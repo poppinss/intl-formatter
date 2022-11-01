@@ -119,4 +119,19 @@ test.group('formatters', () => {
       'Motorcycle, Bus and Car'
     )
   })
+
+  test('format display names', ({ assert }) => {
+    assert.equal(
+      formatters.displayNames('en-in', { type: 'language' }).of('en-in'),
+      'English (India)'
+    )
+
+    /**
+     * Ensure memoize works fine when the options are changed
+     */
+    assert.equal(
+      formatters.displayNames('en-in', { type: 'region', style: 'long' }).of('IN'),
+      'India'
+    )
+  })
 })

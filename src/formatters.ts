@@ -45,3 +45,10 @@ export const list = moize.default(
   },
   { isDeepEqual: true }
 )
+
+export const displayNames = moize.default(
+  (...args: ConstructorParameters<typeof Intl['DisplayNames']>) => {
+    return new Intl.DisplayNames(...args)
+  },
+  { isDeepEqual: true }
+)

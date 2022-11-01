@@ -37,6 +37,7 @@ console.log(amount)
 - `formatters.relative` same as [Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat)
 - `formatters.plural` same as [Intl.PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules)
 - `formatters.list` same as [Intl.ListFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/ListFormat)
+- `formatters.displayNames` same as [Intl.DisplayNames](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/DisplayNames)
 
 ## Why not use FormatJS?
 FormatJS is a great and popular library for Internationalization. However, it has a large set of polyfills for different platforms (especially for browsers) that do not have complete support for Intl. 
