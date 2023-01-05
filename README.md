@@ -100,7 +100,7 @@ DisplayNames x 106,279 ops/sec ±1.32% (94 runs sampled)
 Fastest is DisplayNames@memoize
 ```
 
-[gh-workflow-image]: https://img.shields.io/github/workflow/status/poppinss/intl-formatter/test?style=for-the-badge
+[gh-workflow-image]: https://img.shields.io/github/actions/workflow/status/poppinss/intl-formatter/test.yml?style=for-the-badge
 [gh-workflow-url]: https://github.com/poppinss/intl-formatter/actions/workflows/test.yml "github-actions"
 
 [npm-image]: https://img.shields.io/npm/v/@poppinss/intl-formatter.svg?style=for-the-badge&logo=npm
