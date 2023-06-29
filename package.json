@@ -12,6 +12,9 @@
   "exports": {
     ".": "./build/index.js"
   },
+  "engines": {
+    "node": ">=18.16.0"
+  },
   "scripts": {
     "prebenchmark": "npm run build",
     "benchmark": "node build/benchmarks/date.js && node build/benchmarks/number.js && node build/benchmarks/plural.js && node build/benchmarks/relative.js && node build/benchmarks/list.js && node build/benchmarks/display_names.js",
