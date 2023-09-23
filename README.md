@@ -1,7 +1,7 @@
 # @poppinss/intl-formatter
 > Memoized API for Intl (To be used within Node.js)
 
-[![gh-workflow-image]][gh-workflow-url] [![typescript-image]][typescript-url] [![npm-image]][npm-url] [![license-image]][license-url] [![synk-image]][synk-url]
+[![gh-workflow-image]][gh-workflow-url] [![typescript-image]][typescript-url] [![npm-image]][npm-url] [![license-image]][license-url]
 
 The `intl-formatter` package ships with the memoized version of the `Intl` API. Creating new instances of the `new Intl.<AnyFormatter>` is painfully slow ([see benchmarks](#benchmarks)), and this package caches those instances for re-use.
 
@@ -100,8 +100,8 @@ DisplayNames x 106,279 ops/sec ±1.32% (94 runs sampled)
 Fastest is DisplayNames@memoize
 ```
 
-[gh-workflow-image]: https://img.shields.io/github/actions/workflow/status/poppinss/intl-formatter/test.yml?style=for-the-badge
-[gh-workflow-url]: https://github.com/poppinss/intl-formatter/actions/workflows/test.yml "github-actions"
+[gh-workflow-image]: https://img.shields.io/github/actions/workflow/status/poppinss/intl-formatter/checks.yml?style=for-the-badge
+[gh-workflow-url]: https://github.com/poppinss/intl-formatter/actions/workflows/checks.yml "github-actions"
 
 [npm-image]: https://img.shields.io/npm/v/@poppinss/intl-formatter.svg?style=for-the-badge&logo=npm
 [npm-url]: https://npmjs.org/package/@poppinss/intl-formatter "npm"
@@ -111,6 +111,3 @@ Fastest is DisplayNames@memoize
 
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
 [typescript-url]:  "typescript"
-
-[synk-image]: https://img.shields.io/snyk/vulnerabilities/github/poppinss/intl-formatter?label=Synk%20Vulnerabilities&style=for-the-badge
-[synk-url]: https://snyk.io/test/github/poppinss/intl-formatter?targetFile=package.json 'synk'
