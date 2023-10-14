@@ -14,11 +14,17 @@ import formatters from '../index.js'
 const suite = new benchmark.Suite()
 
 suite
-  .add('RelativeTimeFormat@memoize', function () {
-    formatters.relative('en', { style: 'narrow' }).format(24, 'minutes')
+  .add('ListFormat@memoize', function () {
+    formatters
+      .list('en-in', { style: 'short', type: 'disjunction' })
+      .format(['Motorcycle', 'Bus', 'Car'])
   })
-  .add('RelativeTimeFormat', function () {
-    new Intl.RelativeTimeFormat('en', { style: 'narrow' }).format(24, 'minutes')
+  .add('ListFormat', function () {
+    new Intl.ListFormat('en-in', { style: 'short', type: 'disjunction' }).format([
+      'Motorcycle',
+      'Bus',
+      'Car',
+    ])
   })
   .on('cycle', function (event: any) {
     console.log(String(event.target))
