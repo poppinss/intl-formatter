@@ -21,7 +21,7 @@ yarn add @poppinss/intl-formatter
 And use it as follows:
 
 ```ts
-import { formatters } from '@poppinss/intl-formatter'
+import formatters from '@poppinss/intl-formatter'
 
 const amount = formatters
   .number('en-in', { style: 'currency', currency: 'INR' })
