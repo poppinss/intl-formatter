@@ -16,7 +16,7 @@
     "node": ">=18.16.0"
   },
   "scripts": {
-    "benchmark": "node --loader=ts-node/esm benchmarks/date.js && node --loader=ts-node/esm benchmarks/number.js && node --loader=ts-node/esm benchmarks/plural.js && node --loader=ts-node/esm benchmarks/relative.js && node --loader=ts-node/esm benchmarks/list.js && node --loader=ts-node/esm benchmarks/display_names.js",
+    "benchmark": "node --import=ts-node-maintained/register/esm benchmarks/date.js && node --import=ts-node-maintained/register/esm benchmarks/number.js && node --import=ts-node-maintained/register/esm benchmarks/plural.js && node --import=ts-node-maintained/register/esm benchmarks/relative.js && node --import=ts-node-maintained/register/esm benchmarks/list.js && node --import=ts-node-maintained/register/esm benchmarks/display_names.js",
     "pretest": "npm run lint",
     "test": "c8 npm run quick:test",
     "lint": "eslint .",

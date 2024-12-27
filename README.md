@@ -3,7 +3,7 @@
 
 [![gh-workflow-image]][gh-workflow-url] [![typescript-image]][typescript-url] [![npm-image]][npm-url] [![license-image]][license-url]
 
-The `intl-formatter` package ships with the memoized version of the `Intl` API. Creating new instances of the `new Intl.<AnyFormatter>` is painfully slow ([see benchmarks](#benchmarks)), and this package caches those instances for re-use.
+The `@poppinss/intl-formatter` package ships with the memoized version of the `Intl` API. Creating new instances of the `new Intl.<AnyFormatter>` is painfully slow ([see benchmarks](#benchmarks)), and this package caches those instances for re-use.
 
 - The API is 100% identical to the official spec, instead of writing `new Intl.DateTimeFormat()`, you write `formatters.date()`, and the rest is all the same.
 - All arguments are deeply compared during memoization.
@@ -49,8 +49,8 @@ This package relies on the native Intl APIs available in Node.js runtime and cac
 **DateTimeFormat**
 
 ```
-DateTimeFormat@memoize x 1,115,507 ops/sec ±0.22% (94 runs sampled)
-DateTimeFormat x 20,042 ops/sec ±20.76% (75 runs sampled)
+DateTimeFormat@memoize x 2,192,264 ops/sec ±0.17% (99 runs sampled)
+DateTimeFormat x 41,933 ops/sec ±16.93% (87 runs sampled)
 
 Fastest is DateTimeFormat@memoize
 ```
@@ -58,8 +58,8 @@ Fastest is DateTimeFormat@memoize
 **NumberFormat**
 
 ```
-NumberFormat@memoize x 2,874,842 ops/sec ±0.28% (97 runs sampled)
-NumberFormat x 74,720 ops/sec ±1.14% (97 runs sampled)
+NumberFormat@memoize x 3,630,725 ops/sec ±0.87% (97 runs sampled)
+NumberFormat x 88,994 ops/sec ±2.96% (93 runs sampled)
 
 Fastest is NumberFormat@memoize
 ```
@@ -67,8 +67,8 @@ Fastest is NumberFormat@memoize
 **PluralRules**
 
 ```
-PluralRules@memoize x 2,381,739 ops/sec ±0.63% (97 runs sampled)
-PluralRules x 62,113 ops/sec ±2.88% (91 runs sampled)
+PluralRules@memoize x 3,296,162 ops/sec ±1.13% (98 runs sampled)
+PluralRules x 80,256 ops/sec ±3.65% (82 runs sampled)
 
 Fastest is PluralRules@memoize
 ```
@@ -76,8 +76,8 @@ Fastest is PluralRules@memoize
 **RelativeTimeFormat**
 
 ```
-RelativeTimeFormat@memoize x 2,426,178 ops/sec ±1.11% (92 runs sampled)
-RelativeTimeFormat x 89,485 ops/sec ±3.48% (84 runs sampled)
+RelativeTimeFormat@memoize x 3,149,774 ops/sec ±1.07% (97 runs sampled)
+RelativeTimeFormat x 114,421 ops/sec ±2.62% (90 runs sampled)
 
 Fastest is RelativeTimeFormat@memoize
 ```
@@ -85,8 +85,8 @@ Fastest is RelativeTimeFormat@memoize
 **ListFormat**
 
 ```
-ListFormat@memoize x 1,501,976 ops/sec ±1.94% (97 runs sampled)
-ListFormat x 244,943 ops/sec ±0.93% (97 runs sampled)
+ListFormat@memoize x 1,875,493 ops/sec ±1.95% (95 runs sampled)
+ListFormat x 311,985 ops/sec ±1.30% (96 runs sampled)
 
 Fastest is ListFormat@memoize
 ```
@@ -94,8 +94,8 @@ Fastest is ListFormat@memoize
 **DisplayNames**
 
 ```
-DisplayNames@memoize x 299,573 ops/sec ±0.56% (93 runs sampled)
-DisplayNames x 106,279 ops/sec ±1.32% (94 runs sampled)
+DisplayNames@memoize x 338,991 ops/sec ±0.96% (97 runs sampled)
+DisplayNames x 128,909 ops/sec ±1.16% (94 runs sampled)
 
 Fastest is DisplayNames@memoize
 ```
