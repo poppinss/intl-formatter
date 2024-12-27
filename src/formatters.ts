@@ -7,8 +7,6 @@
  * file that was distributed with this source code.
  */
 
-// @todo formatList | formatDisplayName
-
 import moize from 'moize'
 
 export const number = moize.default(

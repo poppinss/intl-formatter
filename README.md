@@ -1,5 +1,5 @@
 # @poppinss/intl-formatter
-> Memoized API for Intl (To be used within Node.js)
+> JavaScript Internationalization API, memoized for speed and performance
 
 [![gh-workflow-image]][gh-workflow-url] [![typescript-image]][typescript-url] [![npm-image]][npm-url] [![license-image]][license-url]
 
