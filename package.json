@@ -12,11 +12,8 @@
   "exports": {
     ".": "./build/index.js"
   },
-  "engines": {
-    "node": ">=18.16.0"
-  },
   "scripts": {
-    "benchmark": "node --import=ts-node-maintained/register/esm benchmarks/date.js && node --import=ts-node-maintained/register/esm benchmarks/number.js && node --import=ts-node-maintained/register/esm benchmarks/plural.js && node --import=ts-node-maintained/register/esm benchmarks/relative.js && node --import=ts-node-maintained/register/esm benchmarks/list.js && node --import=ts-node-maintained/register/esm benchmarks/display_names.js",
+    "benchmark": "node --import=@poppinss/ts-exec benchmarks/date.js && node --import=@poppinss/ts-exec benchmarks/number.js && node --import=@poppinss/ts-exec benchmarks/plural.js && node --import=@poppinss/ts-exec benchmarks/relative.js && node --import=@poppinss/ts-exec benchmarks/list.js && node --import=@poppinss/ts-exec benchmarks/display_names.js",
     "pretest": "npm run lint",
     "test": "c8 npm run quick:test",
     "lint": "eslint .",
@@ -29,26 +26,25 @@
     "version": "npm run build",
     "prepublishOnly": "npm run build",
     "release": "release-it",
-    "quick:test": "node --import=ts-node-maintained/register/esm --enable-source-maps bin/test.ts"
+    "quick:test": "node --import=@poppinss/ts-exec --enable-source-maps bin/test.ts"
   },
   "devDependencies": {
-    "@adonisjs/eslint-config": "^2.0.0-beta.7",
-    "@adonisjs/prettier-config": "^1.4.0",
+    "@adonisjs/eslint-config": "^2.0.0",
+    "@adonisjs/prettier-config": "^1.4.4",
     "@adonisjs/tsconfig": "^1.4.0",
-    "@japa/assert": "^4.0.0",
-    "@japa/runner": "^3.1.4",
-    "@release-it/conventional-changelog": "^9.0.4",
-    "@swc/core": "^1.10.2",
-    "@types/node": "^22.10.2",
+    "@japa/assert": "^4.0.1",
+    "@japa/runner": "^4.2.0",
+    "@poppinss/ts-exec": "^1.1.5",
+    "@release-it/conventional-changelog": "^10.0.1",
+    "@types/node": "^22.15.21",
     "benchmark": "^2.1.4",
     "c8": "^10.1.3",
     "del-cli": "^6.0.0",
-    "eslint": "^9.17.0",
-    "prettier": "^3.4.2",
-    "release-it": "^17.11.0",
-    "ts-node-maintained": "^10.9.4",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.2"
+    "eslint": "^9.27.0",
+    "prettier": "^3.5.3",
+    "release-it": "^19.0.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "moize": "^6.1.6"
