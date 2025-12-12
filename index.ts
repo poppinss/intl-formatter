@@ -7,4 +7,4 @@
  * file that was distributed with this source code.
  */
 
-export * as default from './src/formatters.js'
+export * as default from './src/formatters.ts'
