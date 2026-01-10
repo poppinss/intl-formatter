@@ -7,46 +7,46 @@
  * file that was distributed with this source code.
  */
 
-import moize from 'moize'
+import { memoize } from 'micro-memoize'
 
-export const number = moize.default(
+export const number = memoize(
   (...args: ConstructorParameters<(typeof Intl)['NumberFormat']>) => {
     return new Intl.NumberFormat(...args)
   },
-  { isDeepEqual: true }
+  { isKeyItemEqual: 'deep' }
 )
 
-export const date = moize.default(
+export const date = memoize(
   (...args: ConstructorParameters<(typeof Intl)['DateTimeFormat']>) => {
     return new Intl.DateTimeFormat(...args)
   },
-  { isDeepEqual: true }
+  { isKeyItemEqual: 'deep' }
 )
 
-export const plural = moize.default(
+export const plural = memoize(
   (...args: ConstructorParameters<(typeof Intl)['PluralRules']>) => {
     return new Intl.PluralRules(...args)
   },
-  { isDeepEqual: true }
+  { isKeyItemEqual: 'deep' }
 )
 
-export const relative = moize.default(
+export const relative = memoize(
   (...args: ConstructorParameters<(typeof Intl)['RelativeTimeFormat']>) => {
     return new Intl.RelativeTimeFormat(...args)
   },
-  { isDeepEqual: true }
+  { isKeyItemEqual: 'deep' }
 )
 
-export const list = moize.default(
+export const list = memoize(
   (...args: ConstructorParameters<(typeof Intl)['ListFormat']>) => {
     return new Intl.ListFormat(...args)
   },
-  { isDeepEqual: true }
+  { isKeyItemEqual: 'deep' }
 )
 
-export const displayNames = moize.default(
+export const displayNames = memoize(
   (...args: ConstructorParameters<(typeof Intl)['DisplayNames']>) => {
     return new Intl.DisplayNames(...args)
   },
-  { isDeepEqual: true }
+  { isKeyItemEqual: 'deep' }
 )
